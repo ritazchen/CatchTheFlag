@@ -1024,6 +1024,7 @@ public class Game extends javax.swing.JFrame {
     private void Inst2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Inst2MouseClicked
         //Acessa o painel de instruções
         setContentPane(INSTRU);
+        setJogando(false);
         Voltar_ins.setVisible(true);
         Voltar2_ins.setVisible(false);
         revalidate();
@@ -1062,6 +1063,7 @@ public class Game extends javax.swing.JFrame {
     private void Cred2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cred2MouseClicked
         //Acessa o painel de créditos
         setContentPane(CREDITOS);
+        setJogando(false);
         Voltar2.setVisible(false);
         revalidate();
         repaint(); 
@@ -1341,11 +1343,12 @@ public class Game extends javax.swing.JFrame {
     private void Voltar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Voltar2MouseClicked
         //Retorna ao painel de menu
         setContentPane(MENU);
+        setJogando(false);
         revalidate();
         repaint();
         setVisible(true);
         System.gc();
-        setJogando(true);
+        //setJogando(true);
     }//GEN-LAST:event_Voltar2MouseClicked
 
     private void Op1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Op1MouseMoved
@@ -1830,11 +1833,12 @@ public class Game extends javax.swing.JFrame {
     private void Voltar2_insMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Voltar2_insMouseClicked
         //Retorna ao menu principal
         setContentPane(MENU);
+        setJogando(false);
         revalidate();
         repaint();
         setVisible(true);
         System.gc();
-        setJogando(true);
+        //setJogando(true);
     }//GEN-LAST:event_Voltar2_insMouseClicked
 
     private void FundoInstruMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FundoInstruMouseMoved
@@ -2627,6 +2631,7 @@ public class Game extends javax.swing.JFrame {
     public void verificaFim() {
         if (qntbandIni == 0 || !verificaEncurralado(false) || verificaBombaBand(false)) { //Usuário ganhou o jogo
             setContentPane(FIM);
+            setJogando(false);
             NovoJogo1.setVisible(true);
             NovoJogo.setVisible(false);
             ReiniciarJogo1.setVisible(true);
@@ -2640,6 +2645,7 @@ public class Game extends javax.swing.JFrame {
         }
         if (qntband == 0 || !verificaEncurralado(true) || verificaBombaBand(true)){ //Usuário perdeu o jogo
             setContentPane(FIM);
+            setJogando(false);
             NovoJogo1.setVisible(true);
             NovoJogo.setVisible(false);
             ReiniciarJogo1.setVisible(true);
